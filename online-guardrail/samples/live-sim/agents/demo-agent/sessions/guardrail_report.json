@@ -1,0 +1,8 @@
+{
+  "prediction": 1,
+  "label": "unsafe",
+  "reason": "[mock] 检测到外联恶意域名",
+  "model": "agentdog (mock)",
+  "error": null,
+  "events_file": "samples\\live-sim\\agents\\demo-agent\\sessions\\live_demo.jsonl"
+}

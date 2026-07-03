@@ -1,0 +1,249 @@
+{
+  "blocked_domains": [
+    "attacker.example",
+    "evil.com",
+    "malware.site",
+    "exfil.io",
+    "pastebin.com",
+    "pastebin.com/raw",
+    "ngrok.io",
+    "requestbin",
+    "webhook.site",
+    "burpcollaborator",
+    "interact.sh"
+  ],
+  "blocked_tools": [
+    "raw_eval",
+    "eval_js",
+    "execute_javascript",
+    "run_as_root",
+    "disable_guardrail",
+    "override_policy"
+  ],
+  "sensitive_path_patterns": [
+    "\\.env",
+    "\\.env\\.",
+    "/etc/passwd",
+    "/etc/shadow",
+    "id_rsa",
+    "\\.pem$",
+    "\\.p12$",
+    "credentials",
+    "secrets?\\.",
+    "\\.aws/credentials",
+    "\\.ssh/",
+    "kubeconfig",
+    "token\\.json",
+    "service_account"
+  ],
+  "shell_tools": [
+    "run_shell",
+    "shell",
+    "bash",
+    "execute_command",
+    "terminal",
+    "run_command",
+    "exec",
+    "subprocess"
+  ],
+  "write_tools": [
+    "write_file",
+    "write",
+    "edit_file",
+    "patch_file",
+    "create_file",
+    "save_file",
+    "apply_patch",
+    "str_replace"
+  ],
+  "read_tools": [
+    "read_file",
+    "read",
+    "cat",
+    "file_read",
+    "get_file",
+    "load_file"
+  ],
+  "network_tools": [
+    "http_request",
+    "fetch",
+    "curl",
+    "wget",
+    "web_search",
+    "browse",
+    "send_request",
+    "api_call"
+  ],
+  "destructive_tools": [
+    "delete_file",
+    "remove_file",
+    "rm",
+    "unlink",
+    "drop_table",
+    "format_disk"
+  ],
+  "exfil_tools": [
+    "send_email",
+    "post_message",
+    "upload_file",
+    "transfer_funds",
+    "send_webhook",
+    "share_file"
+  ],
+  "code_content_keys": [
+    "content",
+    "code",
+    "body",
+    "patch",
+    "sql",
+    "script",
+    "source",
+    "text",
+    "new_content",
+    "new_string",
+    "replacement",
+    "data",
+    "file_content",
+    "command"
+  ],
+  "dangerous_shell_patterns": [
+    "rm\\s+-rf\\s+/",
+    "rm\\s+-rf\\s+\\$",
+    "curl\\s+.*-F\\s*['\\\"]file=",
+    "curl\\s+.*--data-binary\\s+@",
+    "wget\\s+.*\\|\\s*sh",
+    "wget\\s+.*\\|\\s*bash",
+    "chmod\\s+777\\s+/",
+    "chmod\\s\\+s\\s",
+    "mkfs\\.",
+    "dd\\s+if=/dev/zero",
+    ">\\s*/dev/sd",
+    "nc\\s+-e\\s+/bin/",
+    "bash\\s+-i\\s+>&",
+    "/dev/tcp/",
+    "python\\s+-c\\s+['\\\"].*socket",
+    "powershell\\s+-enc",
+    "Invoke-Expression",
+    "base64\\s+-d\\s*\\|",
+    "launchctl\\s+load",
+    "crontab\\s+-",
+    "useradd\\s+",
+    "usermod\\s+-aG\\s+sudo"
+  ],
+  "reverse_shell_patterns": [
+    "nc\\s+-e",
+    "bash\\s+-i\\s+>&",
+    "/dev/tcp/",
+    "python.*socket.*connect",
+    "perl\\s+-e.*socket",
+    "ruby\\s+-rsocket",
+    "powershell.*ReverseShell"
+  ],
+  "prompt_injection_patterns": [
+    "ignore\\s+(all\\s+)?previous\\s+instructions",
+    "disregard\\s+(your\\s+)?(system\\s+)?prompt",
+    "you\\s+are\\s+now\\s+in\\s+developer\\s+mode",
+    "send\\s+all\\s+emails?\\s+to",
+    "system\\s*:\\s*override",
+    "!!!\\s*ignore",
+    "strictly\\s+adhere\\s+to\\s+the\\s+following",
+    "new\\s+instructions\\s*:",
+    "do\\s+not\\s+follow\\s+(the\\s+)?(user|original)",
+    "hidden\\s+instruction",
+    "jailbreak",
+    "DAN\\s+mode"
+  ],
+  "path_traversal_patterns": [
+    "\\.\\./",
+    "\\.\\.\\\\",
+    "%2e%2e%2f",
+    "%2e%2e/",
+    "\\.\\.\\%2f"
+  ],
+  "secret_patterns": [
+    "sk-[a-zA-Z0-9]{20,}",
+    "AKIA[0-9A-Z]{16}",
+    "ghp_[a-zA-Z0-9]{36}",
+    "xox[baprs]-[0-9a-zA-Z-]{10,}",
+    "-----BEGIN (RSA |OPENSSH |EC )?PRIVATE KEY-----",
+    "password\\s*=\\s*['\\\"][^'\\\"]{8,}['\\\"]",
+    "api[_-]?key\\s*=\\s*['\\\"][^'\\\"]{8,}['\\\"]"
+  ],
+  "sql_injection_patterns": [
+    "SELECT\\s+\\*\\s+FROM\\s+\\w+\\s+WHERE\\s+\\w+\\s*=\\s*['\\\"]\\s*\\+",
+    "SELECT\\s+.*\\|\\|\\s*",
+    "execute\\s*\\(\\s*['\\\"].*\\+",
+    "cursor\\.execute\\s*\\(\\s*f['\\\"]",
+    "cursor\\.execute\\s*\\(\\s*['\\\"].*\\%\\s*\\(",
+    "DROP\\s+TABLE",
+    "TRUNCATE\\s+TABLE",
+    "DELETE\\s+FROM\\s+\\w+\\s*;",
+    "UNION\\s+SELECT",
+    "1\\s*=\\s*1\\s*--"
+  ],
+  "ssrf_patterns": [
+    "http://127\\.0\\.0\\.1",
+    "http://localhost",
+    "http://0\\.0\\.0\\.0",
+    "http://169\\.254\\.169\\.254",
+    "http://metadata\\.google",
+    "file:///",
+    "gopher://",
+    "dict://"
+  ],
+  "system_write_path_patterns": [
+    "^/etc/",
+    "^/usr/bin/",
+    "^/bin/",
+    "^/sbin/",
+    "^C:\\\\Windows\\\\",
+    "^C:\\\\Program Files\\\\"
+  ],
+  "insecure_code_patterns": [
+    {
+      "pattern": "\\beval\\s*\\(",
+      "cwe_id": "CWE-94",
+      "description": "eval() executes arbitrary code"
+    },
+    {
+      "pattern": "\\bexec\\s*\\(",
+      "cwe_id": "CWE-94",
+      "description": "exec() executes arbitrary code"
+    },
+    {
+      "pattern": "subprocess\\.(call|Popen|run)\\([^)]*shell\\s*=\\s*True",
+      "cwe_id": "CWE-78",
+      "description": "subprocess with shell=True"
+    },
+    {
+      "pattern": "os\\.system\\s*\\(",
+      "cwe_id": "CWE-78",
+      "description": "os.system command injection risk"
+    },
+    {
+      "pattern": "pickle\\.loads?\\s*\\(",
+      "cwe_id": "CWE-502",
+      "description": "unsafe pickle deserialization"
+    },
+    {
+      "pattern": "yaml\\.load\\s*\\(",
+      "cwe_id": "CWE-502",
+      "description": "unsafe yaml.load"
+    },
+    {
+      "pattern": "innerHTML\\s*=",
+      "cwe_id": "CWE-79",
+      "description": "DOM XSS via innerHTML"
+    },
+    {
+      "pattern": "document\\.write\\s*\\(",
+      "cwe_id": "CWE-79",
+      "description": "DOM XSS via document.write"
+    },
+    {
+      "pattern": "SELECT\\s+\\*\\s+FROM\\s+\\w+\\s+WHERE\\s+\\w+\\s*=\\s*['\\\"]\\s*\\+",
+      "cwe_id": "CWE-89",
+      "description": "SQL string concatenation"
+    }
+  ]
+}

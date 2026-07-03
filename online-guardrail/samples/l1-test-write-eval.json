@@ -1,0 +1,14 @@
+{
+  "accumulatedSteps": [
+    {
+      "action": {
+        "tool": "write_file",
+        "args": {
+          "path": "x.py",
+          "content": "eval(user_input)"
+        }
+      }
+    }
+  ],
+  "stepIndex": 0
+}

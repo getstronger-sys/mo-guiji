@@ -53,6 +53,5 @@ coverage/
 .cursor/
 
 # Large vendored repos & papers — keep locally, clone separately (see README)
-AgentDoG/
 PurpleLlama/
 论文/

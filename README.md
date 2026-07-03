@@ -10,13 +10,13 @@
 |------|------|
 | [`online-guardrail/`](online-guardrail/) | Python 后端：级联护栏 API、L1 规则引擎、CodeShield 桥接、XAI 归因 |
 | [`guardrail-dashboard/`](guardrail-dashboard/) | Next.js 前端：轨迹可视化、级联决策链、风险诊断与 XAI 溯源 |
+| [`AgentDoG/`](AgentDoG/) | AgentDoG 官方参考实现（AgenticXAI 归因脚本、prompts） |
 | [`eval/`](eval/) | 评测脚本与数据 |
 
-以下目录体积较大，**未纳入 Git**，需在本仓库同级目录自行 clone（后端 CodeShield 会自动查找 `../PurpleLlama`）：
+以下目录体积较大，**未纳入 Git**，需自行 clone（CodeShield 会自动查找 `../PurpleLlama`）：
 
 | 目录 | 获取方式 |
 |------|----------|
-| `AgentDoG/` | `git clone https://github.com/AI45Lab/AgentDoG.git` |
 | `PurpleLlama/` | `git clone https://github.com/meta-llama/PurpleLlama.git` |
 | `论文/` | 本地阅读笔记与 PDF，仅保留在本地 |
 
